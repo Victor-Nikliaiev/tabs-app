@@ -1,43 +1,65 @@
-*,
-::after,
-::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@import "./reset";
+
+// ===================
+// General styles
+// ===================
+$background-color: #f0f4f8;
+$main-font-family: "Fira Sans", sans-serif;
+$title-font-family: "Merriweather", serif;
+$main-color: #102a42;
+$light-blue: #00b0bb;
+$duty-color: #324d67;
+$underline-color: $light-blue;
+$btn-active-color: $light-blue;
+
+@mixin activeAndHover() {
+  color: $btn-active-color;
+  border-radius: 0 0.2rem 0.2rem 0;
+  border-left: 4px solid $light-blue;
+  border-right: 1px #f8fafc solid;
+  border-top: 1px #f8fafc solid;
+  border-bottom: 1px #f8fafc solid;
 }
 
 body {
-  background: #f0f4f8;
-  font-family: "Fira Sans", sans-serif;
-  color: #102a42;
+  background: $background-color;
+  font-family: $main-font-family;
+  color: $main-color;
 }
 
 .main-container {
   margin: 5rem auto;
   width: 90vw;
 }
-
 .loading {
-  color: #102a42;
+  color: $main-color;
   text-align: center;
   font-size: 10rem;
 }
 
+// =================
+// Header
+// =================
+
 header {
   text-align: center;
   text-transform: capitalize;
-}
-header h1 {
-  font-family: "Merriweather", serif;
-  font-size: 2rem;
+  h1 {
+    font-family: $title-font-family;
+    font-size: 2rem;
+  }
 }
 
 .underline {
   display: inline-block;
   width: 5rem;
   height: 0.25rem;
-  background: #00b0bb;
+  background: $underline-color;
 }
+
+// =======================
+// Content
+// =======================
 
 .content {
   display: grid;
@@ -45,6 +67,9 @@ header h1 {
   margin-top: 1rem;
 }
 
+// ==========
+// Buttons
+// ==========
 .btn-group {
   display: flex;
   flex-flow: column nowrap;
@@ -59,28 +84,20 @@ header h1 {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
   padding: 0.1rem;
+
   border-left: 4px transparent solid;
   border-right: 1px transparent solid;
   border-top: 1px transparent solid;
   border-bottom: 1px transparent solid;
-}
-.btn:hover {
-  transition: all 600ms;
-  color: #00b0bb;
-  border-radius: 0 0.2rem 0.2rem 0;
-  border-left: 4px solid #00b0bb;
-  border-right: 1px #f8fafc solid;
-  border-top: 1px #f8fafc solid;
-  border-bottom: 1px #f8fafc solid;
+
+  &:hover {
+    transition: all 600ms;
+    @include activeAndHover();
+  }
 }
 
 .active {
-  color: #00b0bb;
-  border-radius: 0 0.2rem 0.2rem 0;
-  border-left: 4px solid #00b0bb;
-  border-right: 1px #f8fafc solid;
-  border-top: 1px #f8fafc solid;
-  border-bottom: 1px #f8fafc solid;
+  @include activeAndHover();
 }
 
 @media only screen and (max-width: 720px) {
@@ -88,7 +105,6 @@ header h1 {
     display: flex;
     flex-direction: column;
   }
-
   .btn-group {
     display: flex;
     margin: 0 auto;
@@ -97,30 +113,34 @@ header h1 {
     justify-content: space-around;
     height: auto;
   }
-
   .btn {
     line-height: 0.7;
     margin: 0.2rem;
     padding: 0.5rem;
+
     border-left: 1px transparent solid;
     border-right: 1px transparent solid;
     border-top: 1px transparent solid;
     border-bottom: 4px transparent solid;
+    &:hover {
+      border-radius: 0.2rem 0.2rem 0 0;
+      border-left: 1px #f8fafc solid;
+      border-bottom: 4px solid $light-blue;
+    }
   }
-  .btn:hover {
-    border-radius: 0.2rem 0.2rem 0 0;
-    border-left: 1px #f8fafc solid;
-    border-bottom: 4px solid #00b0bb;
-  }
-
   .active {
     border-radius: 0.2rem 0.2rem 0 0;
     border-left: 1px #f8fafc solid;
     border-right: 1px #f8fafc solid;
     border-top: 1px #f8fafc solid;
-    border-bottom: 4px solid #00b0bb;
+    border-bottom: 4px solid $light-blue;
   }
 }
+
+// ============
+// Job item
+// ============
+
 .job-item {
   padding-left: 3rem;
 }
@@ -136,7 +156,7 @@ header h1 {
 
 .job-company {
   width: fit-content;
-  font-family: "Merriweather", serif;
+  font-family: $title-font-family;
   padding: 0.2rem;
   font-size: 1rem;
   color: #718aa4;
@@ -160,11 +180,11 @@ header h1 {
   display: grid;
   grid-template-columns: 5% 1fr;
   align-items: center;
-  color: #324d67;
+  color: $duty-color;
 }
 
 .list-disc {
-  color: #00b0bb;
+  color: $light-blue;
 }
 
 @media only screen and (max-width: 350px) {
@@ -172,5 +192,3 @@ header h1 {
     grid-template-columns: auto 1fr;
   }
 }
-
-/*# sourceMappingURL=index.css.map */

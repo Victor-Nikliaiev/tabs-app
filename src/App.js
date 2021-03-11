@@ -26,7 +26,7 @@ const App = () => {
 
   if (loading) {
     return (
-      <main className="container loading">
+      <main className="main-container loading">
         <VscLoading className="loading-icon" />
       </main>
     );
@@ -39,13 +39,17 @@ const App = () => {
     <main className="main-container">
       <header>
         <h1>experience</h1>
-        <div className="inderline"></div>
+        <div className="underline"></div>
       </header>
       <section className="content">
         <div className="btn-group">
           {companies.map((company, index) => {
             return (
-              <button key={index} onClick={() => setValue(index)}>
+              <button
+                className={`btn ${index === value && "active"}`}
+                key={index}
+                onClick={() => setValue(index)}
+              >
                 {company}
               </button>
             );
