@@ -6,6 +6,47 @@
   box-sizing: border-box;
 }
 
+.fade-appear {
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity 500ms linear;
+}
+
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms linear;
+}
+
+.job-fade-enter .job-item {
+  opacity: 0;
+}
+
+.job-fade-enter-active .job-item {
+  opacity: 1;
+}
+
+.job-fade-exit .job-item {
+  opacity: 1;
+}
+
+.job-fade-exit-active .job-item {
+  opacity: 0;
+}
+
+.job-fade-enter-active .job-item,
+.job-fade-exit-active .job-item {
+  transition: opacity 300ms;
+}
+
 body {
   background: #f0f4f8;
   font-family: "Fira Sans", sans-serif;
