@@ -1,0 +1,44 @@
+// ===================
+// CSS Transition Group
+// ===================
+
+.fade-appear {
+  opacity: 0;
+  z-index: 1;
+}
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity 500ms linear;
+}
+
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms linear;
+}
+
+// ==================================
+.job-fade-enter .job-item {
+  opacity: 0;
+  // transform: translateX(-100%);
+}
+.job-fade-enter-active .job-item {
+  opacity: 1;
+  // transform: translateX(0%);
+}
+.job-fade-exit .job-item {
+  opacity: 1;
+  // transform: translateX(0%);
+}
+.job-fade-exit-active .job-item {
+  opacity: 0;
+  // transform: translateX(100%);
+}
+.job-fade-enter-active .job-item,
+.job-fade-exit-active .job-item {
+  transition: opacity 300ms;
+}

@@ -64,6 +64,12 @@ body {
   font-size: 10rem;
 }
 
+.content {
+  display: grid;
+  grid-template-columns: 10rem 1fr;
+  margin-top: 1rem;
+}
+
 header {
   text-align: center;
   text-transform: capitalize;
@@ -78,12 +84,6 @@ header h1 {
   width: 5rem;
   height: 0.25rem;
   background: #00b0bb;
-}
-
-.content {
-  display: grid;
-  grid-template-columns: 10rem 1fr;
-  margin-top: 1rem;
 }
 
 .btn-group {

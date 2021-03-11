@@ -1,0 +1,55 @@
+// ============
+// Job item
+// ============
+
+.job-item {
+  padding-left: 3rem;
+}
+
+.job-title {
+  font-size: 1.7rem;
+}
+
+.job-header {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.job-company {
+  width: fit-content;
+  font-family: $title-font-family;
+  padding: 0.2rem;
+  font-size: 1rem;
+  color: #718aa4;
+  background: #dae2ec;
+  display: inline-block;
+  border-radius: 0.2rem;
+}
+
+.job-dates {
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  color: #617d98;
+}
+
+.job-duties {
+  margin-top: 1rem;
+}
+
+.duty {
+  line-height: 1.5rem;
+  display: grid;
+  grid-template-columns: 5% 1fr;
+  align-items: center;
+  color: $duty-color;
+}
+
+.list-disc {
+  color: $light-blue;
+}
+
+@media only screen and (max-width: 350px) {
+  .duty {
+    grid-template-columns: auto 1fr;
+  }
+}

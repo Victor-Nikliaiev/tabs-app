@@ -1,0 +1,69 @@
+// ==========
+// Buttons
+// ==========
+.btn-group {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: stretch;
+}
+
+.btn {
+  cursor: pointer;
+  text-decoration: none;
+  background: none;
+  outline: none;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  padding: 0.1rem;
+
+  border-left: 4px transparent solid;
+  border-right: 1px transparent solid;
+  border-top: 1px transparent solid;
+  border-bottom: 1px transparent solid;
+
+  &:hover {
+    transition: all 600ms;
+    @include activeAndHover();
+  }
+}
+
+.active {
+  @include activeAndHover();
+}
+
+@media only screen and (max-width: 720px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+  .btn-group {
+    display: flex;
+    margin: 0 auto;
+    flex-flow: row wrap;
+    width: 50%;
+    justify-content: space-around;
+    height: auto;
+  }
+  .btn {
+    line-height: 0.7;
+    margin: 0.2rem;
+    padding: 0.5rem;
+
+    border-left: 1px transparent solid;
+    border-right: 1px transparent solid;
+    border-top: 1px transparent solid;
+    border-bottom: 4px transparent solid;
+    &:hover {
+      border-radius: 0.2rem 0.2rem 0 0;
+      border-left: 1px #f8fafc solid;
+      border-bottom: 4px solid $light-blue;
+    }
+  }
+  .active {
+    border-radius: 0.2rem 0.2rem 0 0;
+    border-left: 1px #f8fafc solid;
+    border-right: 1px #f8fafc solid;
+    border-top: 1px #f8fafc solid;
+    border-bottom: 4px solid $light-blue;
+  }
+}

@@ -1,0 +1,19 @@
+// =================
+// Header
+// =================
+
+header {
+  text-align: center;
+  text-transform: capitalize;
+  h1 {
+    font-family: $title-font-family;
+    font-size: 2rem;
+  }
+}
+
+.underline {
+  display: inline-block;
+  width: 5rem;
+  height: 0.25rem;
+  background: $underline-color;
+}
